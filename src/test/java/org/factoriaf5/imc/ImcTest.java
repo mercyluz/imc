@@ -8,7 +8,7 @@ public class ImcTest {
         @Test
         public void testCalcularIMC() {
             double imc = Imc.calcularIMC(70, 1.75);
-            assertEquals(22.86, imc, 0.01); // Verificar el valor del IMC con una tolerancia de 0.01
+            assertEquals(22.86, imc, 0.01); 
         }
         @Test
         public void testInterpretarIMC_Delgadezsevera() {
