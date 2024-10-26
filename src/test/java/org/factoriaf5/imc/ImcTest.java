@@ -10,63 +10,41 @@ public class ImcTest {
             double imc = Imc.calcularIMC(70, 1.75);
             assertEquals(22.86, imc, 0.01); // Verificar el valor del IMC con una tolerancia de 0.01
         }
-    
         @Test
-        public void testInterpretarIMC_PesoInferior() {
-            String resultado = Imc.interpretarIMC(17);
-            assertEquals("Peso inferior al normal", resultado);
+        public void testInterpretarIMC_Delgadezsevera() {
+            String resultado = Imc.interpretarIMC(15);
+            assertEquals("Delgadez severa", resultado);
+        }
+        @Test
+        public void testInterpretarIMC_Delgadezmoderada() {
+            String resultado = Imc.interpretarIMC(16);
+            assertEquals("Delgadez Moderada", resultado);
         }
     
         @Test
-        public void testInterpretarIMC_PesoNormal() {
-            String resultado = Imc.interpretarIMC(22);
+        public void testInterpretarIMC_Delgadezleve() {
+            String resultado = Imc.interpretarIMC(18);
+            assertEquals("Delgadez Leve", resultado);
+        }
+    
+        @Test
+        public void testInterpretarIMC_Normal() {
+            String resultado = Imc.interpretarIMC(20);
             assertEquals("Peso normal", resultado);
-        }
-    
-        @Test
-        public void testInterpretarIMC_PesoSuperior() {
-            String resultado = Imc.interpretarIMC(27);
-            assertEquals("Peso superior al normal", resultado);
-        }
-    
-        @Test
-        public void testInterpretarIMC_Obesidad() {
-            String resultado = Imc.interpretarIMC(31);
-            assertEquals("Obesidad", resultado);
-        }
-    
-        // Prueba adicional para borde inferior de peso normal
-        @Test
-        public void testInterpretarIMC_BordePesoNormal() {
-            String resultado = Imc.interpretarIMC(18.5);
-            assertEquals("Peso normal", resultado);
-        }
-    
-        // Prueba adicional para borde superior de peso normal
-        @Test
-        public void testInterpretarIMC_BordePesoNormalSuperior() {
-            String resultado = Imc.interpretarIMC(24.9);
-            assertEquals("Peso normal", resultado);
-        }
-    
-        // Prueba adicional para borde inferior de sobrepeso
-        @Test
-        public void testInterpretarIMC_BordeSobrepeso() {
-            String resultado = Imc.interpretarIMC(25);
-            assertEquals("Peso superior al normal", resultado);
-        }
-    
-        // Prueba adicional para borde superior de sobrepeso
+        }    
         @Test
         public void testInterpretarIMC_BordeSobrepesoSuperior() {
-            String resultado = Imc.interpretarIMC(29.9);
-            assertEquals("Peso superior al normal", resultado);
+            String resultado = Imc.interpretarIMC(31);
+            assertEquals("Obesidad Leve", resultado);
         }
-    
-        // Prueba adicional para borde inferior de obesidad
         @Test
-        public void testInterpretarIMC_BordeObesidad() {
-            String resultado = Imc.interpretarIMC(30);
-            assertEquals("Obesidad", resultado);
+        public void testInterpretarIMC_BordeObesidadModerada() {
+            String resultado = Imc.interpretarIMC(38);
+            assertEquals("Obesidad Moderada", resultado);
+        }
+        @Test
+        public void testInterpretarIMC_BordeObesidadMorbida() {
+            String resultado = Imc.interpretarIMC(41);
+            assertEquals("Obesidad Morbida", resultado);
         }
     }

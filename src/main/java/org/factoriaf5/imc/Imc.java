@@ -7,14 +7,22 @@ package org.factoriaf5.imc;
         }
     
         public static String interpretarIMC(double imc) {
-            if (imc < 18.5) {
-                return "Peso inferior al normal";
-            } else if (imc >= 18.5 && imc < 24.9) {
+            if (imc < 16) {
+                return "Delgadez severa";
+            } else if (imc >= 16 && imc < 17) {
+                return "Delgadez Moderada";
+            } else if (imc >= 17 && imc < 18.5) {
+                return "Delgadez Leve";    
+            } else if (imc >= 18.5 && imc < 25) {
                 return "Peso normal";
-            } else if (imc >= 25 && imc < 29.9) {
-                return "Peso superior al normal";
+            }    else if (imc >= 25 && imc < 30) {
+                    return "Sobrepeso";
+            } else if (imc >= 30 && imc < 35) {
+                        return "Obesidad Leve";
+            } else if (imc >= 35 && imc < 40) {
+                        return "Obesidad Moderada";  
             } else {
-                return "Obesidad";
+                return "Obesidad Morbida";
             }
         }
     }
